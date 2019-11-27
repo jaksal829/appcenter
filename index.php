@@ -1,15 +1,24 @@
 <?php
-	$host = 'dustdata.mysql.database.azure.com';
-	$username = 'appcenter@dustdata';
-	$password = 'app2015!';
-	$db_name = 'dustdata';
-
-	$conn = mysqli_init();
-
-	mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+    $serverName = "https://leejgapp.azurewebsites.net"; // update me
+    $connectionOptions = array(
+        "Database" => "dustdata", // update me
+        "Uid" => "appcenter", // update me
+        "PWD" => "app2015!" // update me
+    );
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    $tsql= "SELECT *
+         FROM dbo.dust";
+    $getResults= sqlsrv_query($conn, $tsql);
+    echo ("Reading data from table" . PHP_EOL);
+    if ($getResults == FALSE)
+        echo (sqlsrv_errors());
+    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+     echo ($row['CategoryName'] . " " . $row['ProductName'] . PHP_EOL);
+    }
+    sqlsrv_free_stmt($getResults);
 ?>
 	
-
     <!DOCTYPE html>
 <html>
 <head>
