@@ -57,7 +57,7 @@
                 },
                 {
                     title: '연제구', 
-                    content: '<div style="padding:5px;">연제구<br><a href="" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">연제구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiYTZiMmEyMjYtYmNiNS00N2EwLTlhYTItZmU2ZjI1YmY2NDVlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.186080, 129.081461)
                 },
                 {
