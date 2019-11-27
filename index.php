@@ -1,4 +1,5 @@
 <?php
+    
     $serverName = "https://leejgapp.azurewebsites.net"; // update me
     $connectionOptions = array(
         "Database" => "dustdata", // update me
@@ -7,6 +8,7 @@
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
+    $result = sqlsrv_query($this->connection, $query) or die( print_r( sqlsrv_errors(), true));
     /*$tsql= "SELECT MAX(t_pm2_5) as maxpm
             FROM [dbo].[dust]";
     $getResults= sqlsrv_query($conn, $tsql);
