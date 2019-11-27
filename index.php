@@ -47,12 +47,12 @@
                 },
                 {
                     title: '을숙도', 
-                    content: '<div style="padding:5px;">을숙도<br><a href="" style="color:blue" target="img">상세정보조회</a></div>',
+                    content: '<div style="padding:5px;">을숙도<br><a href="https://app.powerbi.com/view?r=eyJrIjoiOTAxNDdmMWItY2U4MC00MjM1LTk5YzUtZGFlYjU1ZjBiODdhIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>',
                     latlng: new kakao.maps.LatLng(35.101435, 128.941823)
                 },
                 {
                     title: '서면', 
-                    content: '<div style="padding:5px;">서면<br><a href="https://app.powerbi.com/view?r=eyJrIjoiYjhkNDY3ZGYtNDZkZi00ZmE4LWFlM2MtZjA3NGVhNDM3ZmY4IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>',
+                    content: '<div style="padding:5px;">서면<br><a href="https://app.powerbi.com/view?r=eyJrIjoiOGY2ZGZhZDYtYmQ2Mi00MjFhLTg5MTItZjNhMzA0MjIzZTY3IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>',
                     latlng: new kakao.maps.LatLng(35.158498, 129.060071)
                 },
                 {
@@ -62,7 +62,7 @@
                 },
                 {
                     title: '해운대구', 
-                    content: '<div style="padding:5px;">해운대구<br><a href="" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">해운대구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiZDRiYWE5ZmQtNDg0Zi00MDg0LTkyMWYtNjNkNGYyMzU2YzdkIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D"  style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.158731, 129.160384)
                 },
                 {
@@ -89,6 +89,11 @@
                     title: '북구', 
                     content: '<div style="padding:5px;">북구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiMzBiN2M1MTctM2FkNy00ZjUzLWIwZmYtMmJlMDY5MTcyNjU0IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.233968, 129.025698)
+                },
+                {
+                    title: '서구', 
+                    content: '<div style="padding:5px;">서구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiYjhkNDY3ZGYtNDZkZi00ZmE4LWFlM2MtZjA3NGVhNDM3ZmY4IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    latlng: new kakao.maps.LatLng(35.089074, 129.020829)
                 }
                 
             ];
