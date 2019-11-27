@@ -6,8 +6,8 @@
         "PWD" => "app2015!" // update me
     );
     //Establishes the connection
-    /*$conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql= "SELECT MAX(t_pm2_5) as maxpm
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    /*$tsql= "SELECT MAX(t_pm2_5) as maxpm
             FROM [dbo].[dust]";
     $getResults= sqlsrv_query($conn, $tsql);
     echo ("Reading data from table".PHP_EOL);
