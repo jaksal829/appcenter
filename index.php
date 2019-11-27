@@ -1,14 +1,13 @@
 <?php
     
-    $serverName = "https://leejgapp.azurewebsites.net"; // update me
+    $serverName = "https://leejgapp.azurewebsites.net"; 
     $connectionOptions = array(
-        "Database" => "dustdata", // update me
-        "Uid" => "appcenter", // update me
-        "PWD" => "app2015!" // update me
+        "Database" => "dustserver.database.windows.net", 
+        "Uid" => "appcenter", 
+        "PWD" => "app2015!" 
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $result = sqlsrv_query($this->connection, $query) or die( print_r( sqlsrv_errors(), true));
     /*$tsql= "SELECT MAX(t_pm2_5) as maxpm
             FROM [dbo].[dust]";
     $getResults= sqlsrv_query($conn, $tsql);
@@ -20,7 +19,7 @@
     }
     sqlsrv_free_stmt($getResults);*/
 
-    $tsql= "SELECT MAX(t_pm2_5) as maxpm FROM [dbo].[dust]";
+    $tsql= "SELECT t_pm2_5 as recent FROM dbo.dust WHERE EventProcessedUtcTime = (select max(EventProcessedUtcTime) from dbo.dust)";
     $getResults= sqlsrv_query($conn, $tsql);
     echo ("Reading data from table" . PHP_EOL);
     if ($getResults == FALSE)
@@ -32,7 +31,6 @@
 
     function FormatErrors( $errors )
     {
-        /* Display errors. */
         echo "Error information: ";
 
         foreach ( $errors as $error )
@@ -42,6 +40,7 @@
             echo "Message: ".$error['message']."";
         }
     }
+
 ?>
 	
     <!DOCTYPE html>
