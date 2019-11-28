@@ -1,4 +1,4 @@
-/*<?php
+<?php
     
     $serverName = "https://leejgapp.azurewebsites.net"; 
     $connectionOptions = array(
@@ -29,7 +29,7 @@
     }
     sqlsrv_free_stmt($getResults);
 
-?>*/	
+?>
     <!DOCTYPE html>
 <html>
 <head>
