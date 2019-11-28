@@ -29,7 +29,7 @@
     }
     sqlsrv_free_stmt($getResults);
 
-?>*?/	
+?>*/	
     <!DOCTYPE html>
 <html>
 <head>
