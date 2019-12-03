@@ -1,5 +1,5 @@
 <?php
-/*
+
     $serverName = "https://leejgapp.azurewebsites.net"; 
     $connectionOptions = array(
         "Database" => "dustserver.database.windows.net", 
@@ -8,7 +8,10 @@
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-   
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
     
     $tsql= "SELECT MAX(t_pm2_5) as maxpm
             FROM [dbo].[dust]";
@@ -33,21 +36,8 @@
         echo ($row['recent'] . PHP_EOL);
     }
     */
-  //  sqlsrv_free_stmt($getResults);
-/*
-$servername = "dustserver.database.windows.net";
-$username = "appcenter";
-$password = "app2015!";
+    sqlsrv_free_stmt($getResults);
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-*/
 
 ?>
 
