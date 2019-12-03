@@ -1,4 +1,5 @@
-<?php/*
+<?php
+/*
     $serverName = "https://leejgapp.azurewebsites.net"; 
     $connectionOptions = array(
         "Database" => "dustserver.database.windows.net", 
@@ -33,7 +34,7 @@
     }
     */
   //  sqlsrv_free_stmt($getResults);
-
+/*
 $servername = "dustserver.database.windows.net";
 $username = "appcenter";
 $password = "app2015!";
@@ -46,7 +47,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully";
-
+*/
 
 ?>
 
