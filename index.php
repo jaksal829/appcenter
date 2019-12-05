@@ -8,6 +8,7 @@
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
+    echo "conn: ".$conn."<br>";
     if ($conn->connect_error) {
         echo "aaa";
        die("Connection failed: " . $conn->connect_error);
