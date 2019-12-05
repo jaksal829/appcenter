@@ -10,11 +10,12 @@
     $conn = sqlsrv_connect($serverName, $connectionOptions);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
+        echo "die"
     }
     echo "Connected successfully";
     
-    $tsql= "SELECT MAX(t_pm2_5) as maxpm
-            FROM [dbo].[dust]";
+    $tsql= "SELECT max(t_pm2_5) 미세먼지
+            FROM dust";
     $getResults= sqlsrv_query($conn, $tsql);
     echo ("Reading data from table".PHP_EOL);
     if ($getResults == FALSE){
@@ -23,7 +24,7 @@
     }
         
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ($row['maxpm']);
+     echo ($row['t_pm2_5']);
     }
     /*
     $tsql= "SELECT t_pm2_5 as recent FROM dbo.dust WHERE EventProcessedUtcTime = (select max(EventProcessedUtcTime) from dbo.dust)";
