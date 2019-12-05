@@ -3,7 +3,7 @@
     $serverName = "https://leejgapp.azurewebsites.net"; 
     $connectionOptions = array(
         "Database" => "dustserver.database.windows.net", 
-        "Uid" => "appcenter", 
+        "UID" => "appcenter", 
         "PWD" => "app2015!" 
     );
     //Establishes the connection
