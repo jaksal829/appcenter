@@ -4,10 +4,9 @@
     $conn = sqlsrv_connect($serverName, $connectionInfo);
 
     if (!$conn) {
-        echo "conn: ".$conn."<br>";
+        echo "conn: false";
     }
     if ($conn->connect_error) {
-        echo "aaa";
         die("Connection failed: " . $conn->connect_error);
     }
     if($conn)
@@ -21,23 +20,9 @@
         echo (sqlsrv_errors());
     }
         
-    //while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-        echo ($row['pm25']);
-   // }
-    /*
-    $tsql= "SELECT t_pm2_5 as recent FROM dbo.dust WHERE EventProcessedUtcTime = (select max(EventProcessedUtcTime) from dbo.dust)";
-    $getResults= sqlsrv_query($conn, $tsql);
-
-    echo ("Reading data from table" . PHP_EOL);
-
-    if ($getResults == FALSE){
-        die(FormatErrors(sqlsrv_errors()));
-    }
-    echo ($row['recent'] . PHP_EOL);    
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-        echo ($row['recent'] . PHP_EOL);
+        echo ($row['pm25']);
     }
-    */
     sqlsrv_free_stmt($getResults);
 
 
