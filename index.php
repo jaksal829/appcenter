@@ -12,7 +12,8 @@
         die("Connection failed: " . $conn->connect_error);
         echo "die"
     }
-    echo "Connected successfully";
+    if($conn)
+        echo "Connected successfully ";
     
     $tsql= "SELECT max(t_pm2_5) 미세먼지
             FROM dust";
@@ -23,7 +24,7 @@
     }
         
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ($row['미세먼지']);
+     echo ($row['']);
     }
     /*
     $tsql= "SELECT t_pm2_5 as recent FROM dbo.dust WHERE EventProcessedUtcTime = (select max(EventProcessedUtcTime) from dbo.dust)";
