@@ -20,11 +20,10 @@
     echo ("Reading data from table".PHP_EOL);
     if ($getResults == FALSE){
         echo (sqlsrv_errors());
-        echo "error";
     }
         
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ($row['t_pm2_5']);
+     echo ($row['미세먼지']);
     }
     /*
     $tsql= "SELECT t_pm2_5 as recent FROM dbo.dust WHERE EventProcessedUtcTime = (select max(EventProcessedUtcTime) from dbo.dust)";
