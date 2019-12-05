@@ -24,7 +24,7 @@
     }
         
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ($row['']);
+     //echo ($row['']);
     }
     /*
     $tsql= "SELECT t_pm2_5 as recent FROM dbo.dust WHERE EventProcessedUtcTime = (select max(EventProcessedUtcTime) from dbo.dust)";
