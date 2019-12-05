@@ -9,13 +9,11 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    if($conn)
-        echo "Connected successfully ";
     
     $tsql= "SELECT max(t_pm2_5) as pm25
             FROM dust";
     $getResults= sqlsrv_query($conn, $tsql);
-    echo ("Reading data from table".PHP_EOL);
+   // echo ("Reading data from table".PHP_EOL);
     if ($getResults == FALSE){
         echo (sqlsrv_errors());
     }
@@ -23,7 +21,7 @@
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
         echo ($row['pm25']);
     }
-    sqlsrv_free_stmt($getResults);
+   // sqlsrv_free_stmt($getResults);
 
 
 ?>
