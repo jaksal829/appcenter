@@ -1,19 +1,14 @@
 <?php
+    $connectionInfo = array("UID" => "appcenter", "pwd" => "app2015!", "Database" => "dustdata", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+    $serverName = "tcp:dustserver.database.windows.net,1433";
+    $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-    $serverName = "https://leejgapp.azurewebsites.net"; 
-    $connectionOptions = array(
-        "Database" => "dustserver.database.windows.net", 
-        "UID" => "appcenter", 
-        "PWD" => "app2015!" 
-    );
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
     if (!$conn) {
         echo "conn: ".$conn."<br>";
     }
     if ($conn->connect_error) {
         echo "aaa";
-       die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: " . $conn->connect_error);
     }
     if($conn)
         echo "Connected successfully ";
