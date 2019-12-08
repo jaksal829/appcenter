@@ -53,7 +53,7 @@
             var markerPosition  = [ 
                 {//0
                     title: '신라대학교',
-                    content: '<div style="padding:5px;">신라대학교<br><a href="https://app.powerbi.com/view?r=eyJrIjoiZmQ1NWMxZGMtMzJhMy00YWZkLTk3NzQtMTE1OTdmNjQxY2VkIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">신라대학교<br><a href="https://app.powerbi.com/view?r=eyJrIjoiZmQ1NWMxZGMtMzJhMy00YWZkLTk3NzQtMTE1OTdmNjQxY2VkIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a><p> <?php  echo (" 초미세먼지 : ".$x." / 미세먼지 : ".$y." / 극초미세먼지 : ".$z); ?> </p></div>', 
                     latlng: new kakao.maps.LatLng(35.169024, 128.995852)
                 },
                 {//1
@@ -140,7 +140,7 @@
             
     
   </script>
-  <p> <?php  echo (" 초미세먼지 : ".$x." / 미세먼지 : ".$y." / 극초미세먼지 : ".$z); ?> </p>
+  
    
 </body>
 </html>
