@@ -127,7 +127,13 @@
                 kakao.maps.event.addListener(marker, 'click', makeClick(map,marker,infowindow));
             }
             <?php 
-                echo($x.", ".$y.", ".$z);
+            while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+                echo (" 초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".$row['t_pm1_0'].PHP_EOL);
+                $x = $row['t_pm2_5'];
+                $y = $row['t_pm10'];
+                $z = $row['t_pm1_0'];
+            } 
+            echo($x.", ".$y.", ".$z);
             ?>
             // 마커가 지도 위에 표시되도록 설정합니다
     
