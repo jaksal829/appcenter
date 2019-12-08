@@ -131,7 +131,9 @@
                 });
                 kakao.maps.event.addListener(marker, 'click', makeClick(map,marker,infowindow));
             }
-    
+            <?php 
+    echo($x.", ".$y.", ".$z);
+  ?>
             // 마커가 지도 위에 표시되도록 설정합니다
     
     
@@ -144,6 +146,4 @@
   </script>
 </body>
 </html>
-<?php 
-    echo(PHP_EOL.$x.", ".$y.", ".$z);
-  ?>
+
