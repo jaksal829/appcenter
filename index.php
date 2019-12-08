@@ -18,7 +18,7 @@
     }
         
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-        echo ("초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".PHP_EOL);
+        echo ("초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".$row['t_pm1_0'].PHP_EOL);
     }
    sqlsrv_free_stmt($getResults);
 
