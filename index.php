@@ -10,7 +10,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
     
-    $tsql= "SELECT t_pm2_5 FROM dust WHERE EventProcessedUtcTime = (SELECT MAX(EventProcessedUtcTime) FROM dust)";
+    $tsql= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust WHERE EventProcessedUtcTime = (SELECT MAX(EventProcessedUtcTime) FROM dust)";
     $getResults= sqlsrv_query($conn, $tsql);
    // echo ("Reading data from table".PHP_EOL);
     if ($getResults == FALSE){
@@ -18,7 +18,7 @@
     }
         
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-        echo ($row['t_pm2_5']);
+        echo ("초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".PHP_EOL);
     }
    sqlsrv_free_stmt($getResults);
 
@@ -50,68 +50,68 @@
     
             // 마커가 표시될 위치입니다 
             var markerPosition  = [ 
-                {
+                {//0
                     title: '신라대학교',
                     content: '<div style="padding:5px;">신라대학교<br><a href="https://app.powerbi.com/view?r=eyJrIjoiZmQ1NWMxZGMtMzJhMy00YWZkLTk3NzQtMTE1OTdmNjQxY2VkIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.169024, 128.995852)
                 },
-                {
+                {//1
                     title: '김해공항', 
                     content: '<div style="padding:5px;">김해공항<br><a href=""https://app.powerbi.com/view?r=eyJrIjoiMjJkYWJhMjktMzg4ZS00ZTAyLWIyMDktNDZiNTI1ZWIwNzhlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D"" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.173097, 128.946298)
                 },
-                {
+                {//2
                     title: '을숙도', 
                     content: '<div style="padding:5px;">을숙도<br><a href="https://app.powerbi.com/view?r=eyJrIjoiOTAxNDdmMWItY2U4MC00MjM1LTk5YzUtZGFlYjU1ZjBiODdhIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>',
                     latlng: new kakao.maps.LatLng(35.101435, 128.941823)
                 },
-                {
+                {//3
                     title: '서면', 
                     content: '<div style="padding:5px;">서면<br><a href="https://app.powerbi.com/view?r=eyJrIjoiOGY2ZGZhZDYtYmQ2Mi00MjFhLTg5MTItZjNhMzA0MjIzZTY3IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>',
                     latlng: new kakao.maps.LatLng(35.158498, 129.060071)
                 },
-                {
+                {//4
                     title: '연제구', 
                     content: '<div style="padding:5px;">연제구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiYTZiMmEyMjYtYmNiNS00N2EwLTlhYTItZmU2ZjI1YmY2NDVlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.186080, 129.081461)
                 },
-                {
+                {//5
                     title: '해운대구', 
                     content: '<div style="padding:5px;">해운대구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiZDRiYWE5ZmQtNDg0Zi00MDg0LTkyMWYtNjNkNGYyMzU2YzdkIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D"  style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.158731, 129.160384)
                 },
-                {
+                {//6
                     title: '광안리해수욕장', 
                     content: '<div style="padding:5px;">광안리 해수욕장<br><a href="https://app.powerbi.com/view?r=eyJrIjoiNWYxZGU0YjItMjc2MS00YzIwLThlMWEtYTBjNTQ2YWUwYjZmIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.153141, 129.118674)
                 },
-                {
+                {//7
                     title: '중구', 
                     content: '<div style="padding:5px;">중구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiNDgwZTkzOTItOGFhYS00YWViLTgyMmMtZjEyN2U2ZmJhN2JlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.105124, 129.037344)
                 },
-                {
+                {//8
                     title: '사하구',
                     content: '<div style="padding:5px;">사하구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiZGZlZDg0MzItMDg0Mi00ZTc0LTk2YzQtNDY4M2QzMTY3YWFlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.085857, 128.978082)
                 },
-                {
+                {//9
                     title: '남구', 
                     content: '<div style="padding:5px;">남구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiYmZkZGVkNDMtNjNlOC00NjBmLWEwY2YtZDJhOGJkYWIyYjlhIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.129797, 129.091496)
                 },
-                {
+                {//10
                     title: '북구', 
                     content: '<div style="padding:5px;">북구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiMzBiN2M1MTctM2FkNy00ZjUzLWIwZmYtMmJlMDY5MTcyNjU0IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.233968, 129.025698)
                 },
-                {
+                {//11
                     title: '서구', 
                     content: '<div style="padding:5px;">서구<br><a href="https://app.powerbi.com/view?r=eyJrIjoiYjhkNDY3ZGYtNDZkZi00ZmE4LWFlM2MtZjA3NGVhNDM3ZmY4IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.089074, 129.020829)
                 }
                 
-            ], selectedMarker = null;
+            ];
             // 마커를 생성합니다
             for (var i = 0; i < markerPosition.length; i ++) {
                 var marker = new kakao.maps.Marker({
@@ -119,9 +119,10 @@
                     title : markerPosition[i].title,
                     position: markerPosition[i].latlng // 마커를 표시할 위치
                 });
+
                 var infowindow = new kakao.maps.InfoWindow({
                     content : markerPosition[i].content,
-                    removable : true // 
+                    removable : true // x 표시
                 });
                 kakao.maps.event.addListener(marker, 'click', makeClick(map,marker,infowindow));
             }
@@ -133,10 +134,6 @@
             function makeClick(map, marker, infowindow) {
                 return function() {
                     infowindow.open(map,marker);
-                    if(!selectedMarker || selectedMarker !== marker){
-                        infowindow.close();
-                    }
-                    selectedMarker = marker;
                 };
             }
   </script>
