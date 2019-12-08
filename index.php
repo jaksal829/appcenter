@@ -47,11 +47,6 @@
                 level: 9 // 지도의 확대 레벨
             };
             var map = new kakao.maps.Map(mapContainer, mapOption);
-            <?php
-                
-            ?>
-
-            
 
             // 마커가 표시될 위치입니다 
             var markerPosition  = [ 
@@ -132,8 +127,8 @@
                 kakao.maps.event.addListener(marker, 'click', makeClick(map,marker,infowindow));
             }
             <?php 
-    echo($x.", ".$y.", ".$z);
-  ?>
+                echo($x.", ".$y.", ".$z);
+            ?>
             // 마커가 지도 위에 표시되도록 설정합니다
     
     
