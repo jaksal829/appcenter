@@ -42,8 +42,9 @@
                 level: 9 // 지도의 확대 레벨
             };
             var map = new kakao.maps.Map(mapContainer, mapOption);
-            
-        echo (" 초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".$row['t_pm1_0']);
+            <?php
+              echo (" 초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".$row['t_pm1_0']);
+            ?>
 
             
 
