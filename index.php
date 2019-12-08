@@ -43,7 +43,7 @@
             };
             var map = new kakao.maps.Map(mapContainer, mapOption);
             <?php
-             
+                
             ?>
 
             
@@ -139,6 +139,7 @@
   </script>
 </body>
 </html>
-<?php while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+<?php //while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
         echo (" 초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".$row['t_pm1_0'].PHP_EOL);
-    } ?>
+  //  } 
+  ?>
