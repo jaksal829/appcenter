@@ -111,7 +111,7 @@
                     latlng: new kakao.maps.LatLng(35.089074, 129.020829)
                 }
                 
-            ];
+            ], selectedMarker = null;
             // 마커를 생성합니다
             for (var i = 0; i < markerPosition.length; i ++) {
                 var marker = new kakao.maps.Marker({
@@ -132,7 +132,11 @@
             // 마커에 클릭이벤트를 등록합니다
             function makeClick(map, marker, infowindow) {
                 return function() {
-                    infowindow.open(map,marker);	
+                    infowindow.open(map,marker);
+                    if(!selectedMarker || selectedMarker !== marker){
+                        infowindow.close();
+                    }
+                    selectedMarker = marker;
                 };
             }
   </script>
