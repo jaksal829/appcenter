@@ -34,8 +34,8 @@
 </head>
 <body>
         <h1 style="text-align:center; border:thick"> 미세먼지 측정 데이터 </h1>
-        <div id="map" style="width:49.5%;height:600px;"></div>
-        <iframe name="img" id="img" style="width: 49.5%;height: 500px;"></iframe>
+        <div id="map" style="float:left;width:49.5%;height:600px;"></div>
+        <iframe name="img" id="img" style="float:right;width: 49.5%;height: 500px;"></iframe>
         <p>
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cbaab2c9c534e6fcd7b5a9a06732adef"></script>
         </p>
