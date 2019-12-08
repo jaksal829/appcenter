@@ -145,5 +145,5 @@
 </body>
 </html>
 <?php 
-    echo($x.", ".$y.", ".$z);
+    echo(PHP_EOL.$x.", ".$y.", ".$z);
   ?>
