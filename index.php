@@ -27,6 +27,15 @@
         </p>
         <p>&nbsp; </p>
         <script>
+           
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = { 
+                center: new kakao.maps.LatLng(35.158044, 129.059990), // 지도의 중심좌표
+                level: 9 // 지도의 확대 레벨
+            };
+            var map = new kakao.maps.Map(mapContainer, mapOption);
+            
+
             <?php
                 $tsql= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust WHERE EventProcessedUtcTime = (SELECT MAX(EventProcessedUtcTime) FROM dust)";
                 $getResults= sqlsrv_query($conn, $tsql);
@@ -38,15 +47,9 @@
                 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
                     echo ("초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".$row['t_pm1_0'].PHP_EOL);
                 }
-            sqlsrv_free_stmt($getResults);
+                sqlsrv_free_stmt($getResults);
             ?>
-            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-            mapOption = { 
-                center: new kakao.maps.LatLng(35.158044, 129.059990), // 지도의 중심좌표
-                level: 9 // 지도의 확대 레벨
-            };
-            var map = new kakao.maps.Map(mapContainer, mapOption);
-    
+
             // 마커가 표시될 위치입니다 
             var markerPosition  = [ 
                 {//0
