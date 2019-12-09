@@ -153,21 +153,17 @@
             // 마커 이미지를 생성합니다    
             var markerImage = new kakao.maps.MarkerImage(redimg, imageSize); 
             var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
-            
-
-            
-
-
+            var x = <?php $x0; ?>;
             for (var i = 0; i < markerPosition.length; i ++) {
                 if(i == 0){
-                    if("<? $x0 >= 75 ?>" == true){
+                    if(x >=75){
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
                             title : markerPosition[0].title,
                             position: markerPosition[0].latlng, // 마커를 표시할 위치
                             image : markerImage // 마커 이미지 
                         });
-                   }else if ("<? $x0 >= 20 ?>" == true){
+                   }else if (x >= 20){
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
                             title : markerPosition[0].title,
