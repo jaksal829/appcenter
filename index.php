@@ -32,6 +32,6 @@ $daily .= '&' . urlencode('searchCondition') . '=' . urlencode('DAILY'); /*ìš”ì²
     <td><p><?php $daily  ?></p></td>
   </tr>
   </table>
-    
+    <?php echo ($resultnum. " ".$pagenum." ".$daily); ?>
     </body>
 </html>
