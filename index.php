@@ -90,7 +90,7 @@
                 },
                 {//1
                     title: '김해공항', 
-                    content: '<div style="padding:5px;">김해공항<br><p> 초미세먼지 : 14 <br> 미세먼지 : 13 <br> 극초미세먼지 : 6 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiMjJkYWJhMjktMzg4ZS00ZTAyLWIyMDktNDZiNTI1ZWIwNzhlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">김해공항<br><p> 초미세먼지 : 51 <br> 미세먼지 : 58 <br> 극초미세먼지 : 19 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiMjJkYWJhMjktMzg4ZS00ZTAyLWIyMDktNDZiNTI1ZWIwNzhlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.173097, 128.946298)
                 },
                 {//2
@@ -140,7 +140,7 @@
                 },
                 {//11
                     title: '서구', 
-                    content: '<div style="padding:5px;">서구<br><p> 초미세먼지 : 13 <br> 미세먼지 : 16 <br> 극초미세먼지 : 9 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYjhkNDY3ZGYtNDZkZi00ZmE4LWFlM2MtZjA3NGVhNDM3ZmY4IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">서구<br><p> 초미세먼지 : 67 <br> 미세먼지 : 73 <br> 극초미세먼지 : 31 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYjhkNDY3ZGYtNDZkZi00ZmE4LWFlM2MtZjA3NGVhNDM3ZmY4IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.089074, 129.020829)
                 }
                 
