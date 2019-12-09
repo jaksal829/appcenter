@@ -127,19 +127,21 @@
                 var markerImage = new kakao.maps.MarkerImage(redimg, imageSize); 
                 var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
                 
-                var marker = new kakao.maps.Marker({
-                    map: map, // 마커를 표시할 지도
-                    title : markerPosition[i].title,
-                    position: markerPosition[i].latlng // 마커를 표시할 위치
-                    //image : markerImage // 마커 이미지 
-                });
-                if('<?php $x  ?>' > 1){
+                
+                if(<?php $x  ?> >= 1){
                     marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
                         title : markerPosition[i].title,
                         position: markerPosition[i].latlng, // 마커를 표시할 위치
                         image : markerImage // 마커 이미지 
                     })
+                }else{
+                    var marker = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    title : markerPosition[i].title,
+                    position: markerPosition[i].latlng // 마커를 표시할 위치
+                    //image : markerImage // 마커 이미지 
+                });
                 }
 
                 var infowindow = new kakao.maps.InfoWindow({
