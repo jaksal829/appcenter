@@ -160,7 +160,7 @@
 
             for (var i = 0; i < markerPosition.length; i ++) {
                 if(i == 0){
-                    if(<? $x0 ?>){
+                    if("<? $x0 >= 20 ?>"){
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
                             title : markerPosition[0].title,
