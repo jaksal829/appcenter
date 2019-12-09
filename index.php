@@ -159,53 +159,41 @@
 
 
             for (var i = 0; i < markerPosition.length; i ++) {
-                if(i == 0 || i == 3 || i == 5){
+                if(i == 0){
                     if('<? $x >= 75 ?>'){
-                var marker = new kakao.maps.Marker({
-                    map: map, // 마커를 표시할 지도
-                    title : markerPosition[0].title,
-                    position: markerPosition[0].latlng, // 마커를 표시할 위치
-                    image : markerImage // 마커 이미지 
-                });
-                }else if ('<? $x >= 50 ?>'){
+                        var marker = new kakao.maps.Marker({
+                            map: map, // 마커를 표시할 지도
+                            title : markerPosition[0].title,
+                            position: markerPosition[0].latlng, // 마커를 표시할 위치
+                            image : markerImage // 마커 이미지 
+                        });
+                    }else if ('<? $x >= 50 ?>'){
+                        var marker = new kakao.maps.Marker({
+                            map: map, // 마커를 표시할 지도
+                            title : markerPosition[0].title,
+                            position: markerPosition[0].latlng // 마커를 표시할 위치
+                        });
+                    }else{
+                        var marker = new kakao.maps.Marker({
+                            map: map, // 마커를 표시할 지도
+                            title : markerPosition[0].title,
+                            position: markerPosition[0].latlng, // 마커를 표시할 위치
+                            image : bluemarker // 마커 이미지 
+                        });
+                    }
+                }else if (i==3){
                     var marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
-                        title : markerPosition[0].title,
-                        position: markerPosition[0].latlng // 마커를 표시할 위치
+                        title : markerPosition[3].title,
+                        position: markerPosition[3].latlng, // 마커를 표시할 위치
+                        image : markerImage // 마커 이미지 
                     });
-                }else{
+                }else if (i==5){
                     var marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
-                        title : markerPosition[0].title,
-                        position: markerPosition[0].latlng, // 마커를 표시할 위치
-                        image : bluemarker // 마커 이미지 
+                        title : markerPosition[5].title,
+                        position: markerPosition[5].latlng // 마커를 표시할 위치
                     });
-                }
-                var infowindow = new kakao.maps.InfoWindow({
-                    content : markerPosition[0].content,
-                    removable : true // x 표시
-                });
-                
-                var marker = new kakao.maps.Marker({
-                    map: map, // 마커를 표시할 지도
-                    title : markerPosition[3].title,
-                    position: markerPosition[3].latlng, // 마커를 표시할 위치
-                    image : markerImage // 마커 이미지 
-                });
-                var infowindow = new kakao.maps.InfoWindow({
-                    content : markerPosition[3].content,
-                    removable : true // x 표시
-                });
-
-                var marker = new kakao.maps.Marker({
-                    map: map, // 마커를 표시할 지도
-                    title : markerPosition[5].title,
-                    position: markerPosition[5].latlng // 마커를 표시할 위치
-                });
-                var infowindow = new kakao.maps.InfoWindow({
-                    content : markerPosition[5].content,
-                    removable : true // x 표시
-                });
                 }else{
                     var marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
@@ -213,11 +201,11 @@
                         position: markerPosition[i].latlng, // 마커를 표시할 위치
                         image : bluemarker // 마커 이미지 
                      });
-                     var infowindow = new kakao.maps.InfoWindow({
-                        content : markerPosition[i].content,
-                        removable : true // x 표시
-                    });
                 }
+                var infowindow = new kakao.maps.InfoWindow({
+                    content : markerPosition[i].content,
+                    removable : true // x 표시
+                });
                 kakao.maps.event.addListener(marker, 'click', makeClick(map,marker,infowindow));
             }
           
