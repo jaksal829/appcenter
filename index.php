@@ -21,7 +21,36 @@
         $y0 = $row['t_pm10'];
         $z0 = $row['t_pm1_0'];
     } 
-    sqlsrv_free_stmt( $stmt);  
+    
+
+    $tsql1= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust1 WHERE EventProcessedUtcTime = (SELECT MAX(EventProcessedUtcTime) FROM dust1)";
+    $getResults1= sqlsrv_query($conn, $tsql1);
+    // echo ("Reading data from table".PHP_EOL);
+    if ($getResults1 == FALSE){
+        echo (sqlsrv_errors());
+    }
+    while ($row1 = sqlsrv_fetch_array($getResults1, SQLSRV_FETCH_ASSOC)) {
+     //echo (" 초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".$row['t_pm1_0'].PHP_EOL);
+         $x5 = $row1['t_pm2_5'];
+         $y5 = $row1['t_pm10'];
+         $z5 = $row1['t_pm1_0'];
+     } 
+
+
+     $tsql2= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust2 WHERE EventProcessedUtcTime = (SELECT MAX(EventProcessedUtcTime) FROM dust2)";
+     $getResults1= sqlsrv_query($conn, $tsql2);
+     // echo ("Reading data from table".PHP_EOL);
+     if ($getResults2 == FALSE){
+         echo (sqlsrv_errors());
+     }
+     while ($row2 = sqlsrv_fetch_array($getResults2, SQLSRV_FETCH_ASSOC)) {
+      //echo (" 초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".$row['t_pm1_0'].PHP_EOL);
+          $x3 = $row2['t_pm2_5'];
+          $y3 = $row2['t_pm10'];
+          $z3 = $row2['t_pm1_0'];
+      } 
+ 
+     sqlsrv_free_stmt( $stmt);  
     sqlsrv_close( $conn);  
 ?>
 
@@ -86,7 +115,7 @@
                 },
                 {//6
                     title: '광안리해수욕장', 
-                    content: '<div style="padding:5px;">광안리 해수욕장<br><p> 초미세먼지 : 10 <br> 미세먼지 : 14 <br> 극초미세먼지 : 12 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiNWYxZGU0YjItMjc2MS00YzIwLThlMWEtYTBjNTQ2YWUwYjZmIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">광안리 해수욕장<br><p> 초미세먼지 : 12 <br> 미세먼지 : 12 <br> 극초미세먼지 : 9 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiNWYxZGU0YjItMjc2MS00YzIwLThlMWEtYTBjNTQ2YWUwYjZmIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.153141, 129.118674)
                 },
                 {//7
@@ -101,7 +130,7 @@
                 },
                 {//9
                     title: '남구', 
-                    content: '<div style="padding:5px;">남구<br><p> 초미세먼지 : 10 <br> 미세먼지 : 14 <br> 극초미세먼지 : 12 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYmZkZGVkNDMtNjNlOC00NjBmLWEwY2YtZDJhOGJkYWIyYjlhIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">남구<br><p> 초미세먼지 : 5 <br> 미세먼지 : 5 <br> 극초미세먼지 : 3 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYmZkZGVkNDMtNjNlOC00NjBmLWEwY2YtZDJhOGJkYWIyYjlhIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.129797, 129.091496)
                 },
                 {//10
@@ -111,7 +140,7 @@
                 },
                 {//11
                     title: '서구', 
-                    content: '<div style="padding:5px;">서구<br><p> 초미세먼지 : 10 <br> 미세먼지 : 14 <br> 극초미세먼지 : 12 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYjhkNDY3ZGYtNDZkZi00ZmE4LWFlM2MtZjA3NGVhNDM3ZmY4IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">서구<br><p> 초미세먼지 : 13 <br> 미세먼지 : 16 <br> 극초미세먼지 : 9 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYjhkNDY3ZGYtNDZkZi00ZmE4LWFlM2MtZjA3NGVhNDM3ZmY4IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.089074, 129.020829)
                 }
                 
