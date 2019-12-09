@@ -176,18 +176,30 @@
                             image : bluemarker // 마커 이미지 
                         });
                     }
+                }else if (i==1){
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        title : markerPosition[1].title,
+                        position: markerPosition[1].latlng, // 마커를 표시할 위치
+                        image : markerImage // 마커 이미지 
+                    });
                 }else if (i==3){
                     var marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
                         title : markerPosition[3].title,
-                        position: markerPosition[3].latlng, // 마커를 표시할 위치
-                        image : markerImage // 마커 이미지 
+                        position: markerPosition[3].latlng // 마커를 표시할 위치
                     });
                 }else if (i==5){
                     var marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
                         title : markerPosition[5].title,
                         position: markerPosition[5].latlng // 마커를 표시할 위치
+                    });
+                }else if (i==11){
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        title : markerPosition[11].title,
+                        position: markerPosition[11].latlng // 마커를 표시할 위치
                     });
                 }else{
                     var marker = new kakao.maps.Marker({
