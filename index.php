@@ -9,7 +9,7 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-   $tsql= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust WHERE EventProcessedUtcTime = (SELECT MAX(EventProcessedUtcTime) FROM dust)";
+   $tsql= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust WHERE EventEnqueuedUtcTime = (SELECT MAX(EventEnqueuedUtcTime) FROM dust)";
    $getResults= sqlsrv_query($conn, $tsql);
    // echo ("Reading data from table".PHP_EOL);
    if ($getResults == FALSE){
@@ -23,7 +23,7 @@
     } 
     
 
-    $tsql1= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust1 WHERE EventProcessedUtcTime = (SELECT MAX(EventProcessedUtcTime) FROM dust1)";
+    $tsql1= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust1 WHERE EventEnqueuedUtcTime = (SELECT MAX(EventEnqueuedUtcTime) FROM dust1)";
     $getResults1= sqlsrv_query($conn, $tsql1);
     // echo ("Reading data from table".PHP_EOL);
     if ($getResults1 == FALSE){
@@ -37,7 +37,7 @@
      } 
 
 
-     $tsql2= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust2 WHERE EventProcessedUtcTime = (SELECT MAX(EventProcessedUtcTime) FROM dust2)";
+     $tsql2= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust2 WHERE EventEnqueuedUtcTime = (SELECT MAX(EventEnqueuedUtcTime) FROM dust2)";
      $getResults2= sqlsrv_query($conn, $tsql2);
      // echo ("Reading data from table".PHP_EOL);
      if ($getResults2 == FALSE){
@@ -160,14 +160,14 @@
 
             for (var i = 0; i < markerPosition.length; i ++) {
                 if(i == 0){
-                    if('<? $x >= 75 ?>'){
+                    if('<? $x0 >= 75 ?>'){
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
                             title : markerPosition[0].title,
                             position: markerPosition[0].latlng, // 마커를 표시할 위치
                             image : markerImage // 마커 이미지 
                         });
-                    }else if ('<? $x >= 50 ?>'){
+                    }else if ('<? $x0 >= 50 ?>'){
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
                             title : markerPosition[0].title,
