@@ -119,30 +119,30 @@
             // 마커를 생성합니다
             var redimg = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
             var blueimg = "http://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_p.png";
-            
+            // 마커 이미지의 이미지 크기 입니다
+            var imageSize = new kakao.maps.Size(30, 35); 
+            // 마커 이미지를 생성합니다    
+            var markerImage = new kakao.maps.MarkerImage(redimg, imageSize); 
+            var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
             for (var i = 0; i < markerPosition.length; i ++) {
-                // 마커 이미지의 이미지 크기 입니다
-                var imageSize = new kakao.maps.Size(30, 35); 
-                // 마커 이미지를 생성합니다    
-                var markerImage = new kakao.maps.MarkerImage(redimg, imageSize); 
-                var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
-                
-                
-                if( '<?php $x; ?>' >= 1){
-                    marker = new kakao.maps.Marker({
-                        map: map, // 마커를 표시할 지도
-                        title : markerPosition[i].title,
-                        position: markerPosition[i].latlng, // 마커를 표시할 위치
-                        image : markerImage // 마커 이미지 
-                    })
-                }else{
-                    var marker = new kakao.maps.Marker({
+                var marker1 = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    title : markerPosition[i].title,
+                    position: markerPosition[i].latlng, // 마커를 표시할 위치
+                    image : markerImage // 마커 이미지 
+                })
+                var marker2 = new kakao.maps.Marker({
                     map: map, // 마커를 표시할 지도
                     title : markerPosition[i].title,
                     position: markerPosition[i].latlng // 마커를 표시할 위치
-                    });
-                }
-
+                });
+                var marker3 = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    title : markerPosition[i].title,
+                    position: markerPosition[i].latlng, // 마커를 표시할 위치
+                    image : bluemarker // 마커 이미지 
+                })
+                
                 var infowindow = new kakao.maps.InfoWindow({
                     content : markerPosition[i].content,
                     removable : true // x 표시
@@ -150,13 +150,19 @@
                 kakao.maps.event.addListener(marker, 'click', makeClick(map,marker,infowindow));
             }
           
-            // 마커가 지도 위에 표시되도록 설정합니다
     
     
             // 마커에 클릭이벤트를 등록합니다
             function makeClick(map, marker, infowindow) {
                 return function() {
-                    infowindow.open(map,marker);
+                    if('<? $x > 2 ?>'){
+                        infowindow.open(map,marker1);
+                    }else if ('<? $x > 5 ?>'){
+                        infowindow.open(map,marker2);
+                    }else{
+                        infowindow.open(map,marker3);
+                    }
+                        
                 };
             }
             
