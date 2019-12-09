@@ -180,14 +180,14 @@
                     var marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
                         title : markerPosition[1].title,
-                        position: markerPosition[1].latlng, // 마커를 표시할 위치
-                        image : markerImage // 마커 이미지 
+                        position: markerPosition[1].latlng // 마커를 표시할 위치
                     });
                 }else if (i==3){
                     var marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
                         title : markerPosition[3].title,
-                        position: markerPosition[3].latlng // 마커를 표시할 위치
+                        position: markerPosition[3].latlng, // 마커를 표시할 위치
+                        image : markerImage 
                     });
                 }else if (i==5){
                     var marker = new kakao.maps.Marker({
