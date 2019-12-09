@@ -38,7 +38,7 @@
 
 
      $tsql2= "SELECT t_pm1_0, t_pm10, t_pm2_5 FROM dust2 WHERE EventProcessedUtcTime = (SELECT MAX(EventProcessedUtcTime) FROM dust2)";
-     $getResults1= sqlsrv_query($conn, $tsql2);
+     $getResults2= sqlsrv_query($conn, $tsql2);
      // echo ("Reading data from table".PHP_EOL);
      if ($getResults2 == FALSE){
          echo (sqlsrv_errors());
@@ -153,31 +153,52 @@
             // 마커 이미지를 생성합니다    
             var markerImage = new kakao.maps.MarkerImage(redimg, imageSize); 
             var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
-            
-            
-            
-            for (var i = 0; i < markerPosition.length; i ++) {
-                if('<? $x >= 75 ?>'){
+            if('<? $x >= 75 ?>'){
                 var marker = new kakao.maps.Marker({
                     map: map, // 마커를 표시할 지도
-                    title : markerPosition[i].title,
-                    position: markerPosition[i].latlng, // 마커를 표시할 위치
+                    title : markerPosition[0].title,
+                    position: markerPosition[0].latlng, // 마커를 표시할 위치
                     image : markerImage // 마커 이미지 
-                })  
+                });
             }else if ('<? $x >= 50 ?>'){
                 var marker = new kakao.maps.Marker({
                     map: map, // 마커를 표시할 지도
-                    title : markerPosition[i].title,
-                    position: markerPosition[i].latlng // 마커를 표시할 위치
+                    title : markerPosition[0].title,
+                    position: markerPosition[0].latlng // 마커를 표시할 위치
                 });
             }else{
                 var marker = new kakao.maps.Marker({
                     map: map, // 마커를 표시할 지도
-                    title : markerPosition[i].title,
-                    position: markerPosition[i].latlng, // 마커를 표시할 위치
+                    title : markerPosition[0].title,
+                    position: markerPosition[0].latlng, // 마커를 표시할 위치
                     image : bluemarker // 마커 이미지 
-                })
+                });
             }
+
+            var marker = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                title : markerPosition[5].title,
+                position: markerPosition[5].latlng // 마커를 표시할 위치
+            });
+
+            var marker = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                title : markerPosition[3].title,
+                position: markerPosition[3].latlng, // 마커를 표시할 위치
+                image : markerImage // 마커 이미지 
+            });
+
+
+            for (var i = 0; i < markerPosition.length; i ++) {
+                if(i != 0 || i != 3 || i != 5){
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        title : markerPosition[i].title,
+                        position: markerPosition[i].latlng, // 마커를 표시할 위치
+                        image : bluemarker // 마커 이미지 
+                     });
+                     
+                }
                 var infowindow = new kakao.maps.InfoWindow({
                     content : markerPosition[i].content,
                     removable : true // x 표시
