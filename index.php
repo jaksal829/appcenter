@@ -202,7 +202,9 @@
 
 
             for (var i = 0; i < markerPosition.length; i ++) {
-                if(i != 0 || i != 3 || i != 5){
+                if(i == 0 || i == 3 || i == 5){
+                   
+                }else{
                     var marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
                         title : markerPosition[i].title,
