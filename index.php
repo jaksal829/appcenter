@@ -114,7 +114,7 @@
                 
             ];
             // 마커를 생성합니다
-            var imageSrc = "C:\Users\LEE\Desktop\marker\pngheat.com-odfga.png"; 
+            var imageSrc = "marker/pngheat.com-odfga.png"; 
             
             for (var i = 0; i < markerPosition.length; i ++) {
                 // 마커 이미지의 이미지 크기 입니다
