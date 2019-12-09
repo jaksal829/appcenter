@@ -125,23 +125,28 @@
             var markerImage = new kakao.maps.MarkerImage(redimg, imageSize); 
             var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
             for (var i = 0; i < markerPosition.length; i ++) {
-                var marker1 = new kakao.maps.Marker({
-                    map: map, // 마커를 표시할 지도
-                    title : markerPosition[i].title,
-                    position: markerPosition[i].latlng, // 마커를 표시할 위치
-                    image : markerImage // 마커 이미지 
-                })
-                var marker2 = new kakao.maps.Marker({
-                    map: map, // 마커를 표시할 지도
-                    title : markerPosition[i].title,
-                    position: markerPosition[i].latlng // 마커를 표시할 위치
-                });
-                var marker3 = new kakao.maps.Marker({
-                    map: map, // 마커를 표시할 지도
-                    title : markerPosition[i].title,
-                    position: markerPosition[i].latlng, // 마커를 표시할 위치
-                    image : bluemarker // 마커 이미지 
-                })
+                if('<? $x > 2 ?>'){
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        title : markerPosition[i].title,
+                        position: markerPosition[i].latlng, // 마커를 표시할 위치
+                        image : markerImage // 마커 이미지 
+                    })  
+                }else if ('<? $x > 5 ?>'){
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        title : markerPosition[i].title,
+                        position: markerPosition[i].latlng // 마커를 표시할 위치
+                    });
+                }else{
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        title : markerPosition[i].title,
+                        position: markerPosition[i].latlng, // 마커를 표시할 위치
+                        image : bluemarker // 마커 이미지 
+                    })
+                }
+                
                 
                 var infowindow = new kakao.maps.InfoWindow({
                     content : markerPosition[i].content,
@@ -155,14 +160,7 @@
             // 마커에 클릭이벤트를 등록합니다
             function makeClick(map, marker, infowindow) {
                 return function() {
-                    if('<? $x > 2 ?>'){
-                        infowindow.open(map,marker1);
-                    }else if ('<? $x > 5 ?>'){
-                        infowindow.open(map,marker2);
-                    }else{
-                        infowindow.open(map,marker3);
-                    }
-                        
+                    infowindow.open(map,marker);
                 };
             }
             
