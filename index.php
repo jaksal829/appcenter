@@ -153,7 +153,7 @@
             // 마커 이미지를 생성합니다    
             var markerImage = new kakao.maps.MarkerImage(redimg, imageSize); 
             var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
-            var x = <?php $x0; ?>;
+            var x = parseInt('<?php $x0; ?>');
             for (var i = 0; i < markerPosition.length; i ++) {
                 if(i == 0){
                     if(x >=75){
