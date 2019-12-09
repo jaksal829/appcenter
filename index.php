@@ -128,7 +128,7 @@
                 var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
                 
                 
-                if( <?php $x; ?> >= 1){
+                if( '<?php $x; ?>' >= 1){
                     marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
                         title : markerPosition[i].title,
