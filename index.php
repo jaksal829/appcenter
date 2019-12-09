@@ -167,7 +167,7 @@
                             position: markerPosition[0].latlng, // 마커를 표시할 위치
                             image : markerImage // 마커 이미지 
                         });
-                    }else if ('<? $x0 >= 50 ?>'){
+                    }else if ('<? $x0 >= 20 ?>'){
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
                             title : markerPosition[0].title,
