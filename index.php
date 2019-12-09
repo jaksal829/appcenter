@@ -48,7 +48,10 @@
                 level: 9 // 지도의 확대 레벨
             };
             var map = new kakao.maps.Map(mapContainer, mapOption);
-
+            // 마우스 드래그와 모바일 터치를 이용한 지도 이동을 막는다
+		    map.setDraggable(false);		
+            // 마우스 휠과 모바일 터치를 이용한 지도 확대, 축소를 막는다
+            map.setZoomable(false);
             // 마커가 표시될 위치입니다 
             var markerPosition  = [ 
                 {//0
@@ -114,7 +117,9 @@
                 
             ];
             // 마커를 생성합니다
-            var imageSrc = "https://github.com/jaksal829/appcenter/blob/master/pngheat.com-odfga.png"; 
+            var imageSrc = "https://github.com/jaksal829/appcenter/blob/master/pngheat.com-odfga.png";
+            var redimg = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+            var blueimg = "http://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_p.png";
             
             for (var i = 0; i < markerPosition.length; i ++) {
                 // 마커 이미지의 이미지 크기 입니다
@@ -125,8 +130,8 @@
                 var marker = new kakao.maps.Marker({
                     map: map, // 마커를 표시할 지도
                     title : markerPosition[i].title,
-                    position: markerPosition[i].latlng, // 마커를 표시할 위치
-                    image : markerImage // 마커 이미지 
+                    position: markerPosition[i].latlng // 마커를 표시할 위치
+                    //image : markerImage // 마커 이미지 
                 });
 
                 var infowindow = new kakao.maps.InfoWindow({
