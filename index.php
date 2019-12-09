@@ -178,6 +178,17 @@
                 content : markerPosition[0].content,
                 removable : true // x 표시
             });
+            
+            var marker = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                title : markerPosition[3].title,
+                position: markerPosition[3].latlng, // 마커를 표시할 위치
+                image : markerImage // 마커 이미지 
+            });
+            var infowindow = new kakao.maps.InfoWindow({
+                content : markerPosition[3].content,
+                removable : true // x 표시
+            });
 
             var marker = new kakao.maps.Marker({
                 map: map, // 마커를 표시할 지도
@@ -189,16 +200,7 @@
                 removable : true // x 표시
             });
 
-            var marker = new kakao.maps.Marker({
-                map: map, // 마커를 표시할 지도
-                title : markerPosition[3].title,
-                position: markerPosition[3].latlng, // 마커를 표시할 위치
-                image : markerImage // 마커 이미지 
-            });
-            var infowindow = new kakao.maps.InfoWindow({
-                content : markerPosition[3].content,
-                removable : true // x 표시
-            });
+            
 
 
             for (var i = 0; i < markerPosition.length; i ++) {
