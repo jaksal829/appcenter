@@ -160,19 +160,19 @@
 
             for (var i = 0; i < markerPosition.length; i ++) {
                 if(i == 0){
-                    if("<? $x0 >= 20 ?>"){
+                    if("<? $x0 >= 75 ?>" == true){
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
                             title : markerPosition[0].title,
                             position: markerPosition[0].latlng, // 마커를 표시할 위치
                             image : markerImage // 마커 이미지 
                         });
-                   /* }else if (<? $x0 ?>){
+                   }else if ("<? $x0 >= 20 ?>" == true){
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
                             title : markerPosition[0].title,
                             position: markerPosition[0].latlng // 마커를 표시할 위치
-                        });*/
+                        });
                     }else{
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
