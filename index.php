@@ -17,10 +17,10 @@
    }
    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     //echo (" 초미세먼지 : ".$row['t_pm2_5']." / 미세먼지 : ".$row['t_pm10']." / 극초미세먼지 : ".$row['t_pm1_0'].PHP_EOL);
-    $x = $row['t_pm2_5'];
-    $y = $row['t_pm10'];
-    $z = $row['t_pm1_0'];
-} 
+        $x0 = $row['t_pm2_5'];
+        $y0 = $row['t_pm10'];
+        $z0 = $row['t_pm1_0'];
+    } 
     sqlsrv_free_stmt( $stmt);  
     sqlsrv_close( $conn);  
 ?>
@@ -56,7 +56,7 @@
             var markerPosition  = [ 
                 {//0
                     title: '신라대학교',
-                    content: '<div style="padding:5px;">신라대학교<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiZmQ1NWMxZGMtMzJhMy00YWZkLTk3NzQtMTE1OTdmNjQxY2VkIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">신라대학교<br><p> <?php  echo (" 초미세먼지 : ".$x0." <br> 미세먼지 : ".$y0." <br> 극초미세먼지 : ".$z0); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiMzBiN2M1MTctM2FkNy00ZjUzLWIwZmYtMmJlMDY5MTcyNjU0IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.169024, 128.995852)
                 },
                 {//1
@@ -66,52 +66,52 @@
                 },
                 {//2
                     title: '을숙도', 
-                    content: '<div style="padding:5px;">을숙도<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiOTAxNDdmMWItY2U4MC00MjM1LTk5YzUtZGFlYjU1ZjBiODdhIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>',
+                    content: '<div style="padding:5px;">을숙도<br><p> 초미세먼지 : 5 <br> 미세먼지 : 4 <br> 극초미세먼지 : 1 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiOTAxNDdmMWItY2U4MC00MjM1LTk5YzUtZGFlYjU1ZjBiODdhIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>',
                     latlng: new kakao.maps.LatLng(35.101435, 128.941823)
                 },
                 {//3
                     title: '서면', 
-                    content: '<div style="padding:5px;">서면<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiOGY2ZGZhZDYtYmQ2Mi00MjFhLTg5MTItZjNhMzA0MjIzZTY3IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>',
+                    content: '<div style="padding:5px;">서면<br><p> <?php  echo (" 초미세먼지 : ".$x3." <br> 미세먼지 : ".$y3." <br> 극초미세먼지 : ".$z3); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiOGY2ZGZhZDYtYmQ2Mi00MjFhLTg5MTItZjNhMzA0MjIzZTY3IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>',
                     latlng: new kakao.maps.LatLng(35.158498, 129.060071)
                 },
                 {//4
                     title: '연제구', 
-                    content: '<div style="padding:5px;">연제구<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYTZiMmEyMjYtYmNiNS00N2EwLTlhYTItZmU2ZjI1YmY2NDVlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">연제구<br><p> 초미세먼지 : 15 <br> 미세먼지 : 16 <br> 극초미세먼지 : 12 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYTZiMmEyMjYtYmNiNS00N2EwLTlhYTItZmU2ZjI1YmY2NDVlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.186080, 129.081461)
                 },
                 {//5
                     title: '해운대구', 
-                    content: '<div style="padding:5px;">해운대구<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiZDRiYWE5ZmQtNDg0Zi00MDg0LTkyMWYtNjNkNGYyMzU2YzdkIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D"  style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">해운대구<br><p> <?php  echo (" 초미세먼지 : ".$x5." <br> 미세먼지 : ".$y5." <br> 극초미세먼지 : ".$z5); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiZDRiYWE5ZmQtNDg0Zi00MDg0LTkyMWYtNjNkNGYyMzU2YzdkIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D"  style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.158731, 129.160384)
                 },
                 {//6
                     title: '광안리해수욕장', 
-                    content: '<div style="padding:5px;">광안리 해수욕장<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiNWYxZGU0YjItMjc2MS00YzIwLThlMWEtYTBjNTQ2YWUwYjZmIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">광안리 해수욕장<br><p> 초미세먼지 : 10 <br> 미세먼지 : 14 <br> 극초미세먼지 : 12 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiNWYxZGU0YjItMjc2MS00YzIwLThlMWEtYTBjNTQ2YWUwYjZmIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.153141, 129.118674)
                 },
                 {//7
                     title: '중구', 
-                    content: '<div style="padding:5px;">중구<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiNDgwZTkzOTItOGFhYS00YWViLTgyMmMtZjEyN2U2ZmJhN2JlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">중구<br><p> 초미세먼지 : 10 <br> 미세먼지 : 14 <br> 극초미세먼지 : 12 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiNDgwZTkzOTItOGFhYS00YWViLTgyMmMtZjEyN2U2ZmJhN2JlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.105124, 129.037344)
                 },
                 {//8
                     title: '사하구',
-                    content: '<div style="padding:5px;">사하구<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiZGZlZDg0MzItMDg0Mi00ZTc0LTk2YzQtNDY4M2QzMTY3YWFlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">사하구<br><p> 초미세먼지 : 10 <br> 미세먼지 : 14 <br> 극초미세먼지 : 12 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiZGZlZDg0MzItMDg0Mi00ZTc0LTk2YzQtNDY4M2QzMTY3YWFlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.085857, 128.978082)
                 },
                 {//9
                     title: '남구', 
-                    content: '<div style="padding:5px;">남구<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYmZkZGVkNDMtNjNlOC00NjBmLWEwY2YtZDJhOGJkYWIyYjlhIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">남구<br><p> 초미세먼지 : 10 <br> 미세먼지 : 14 <br> 극초미세먼지 : 12 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYmZkZGVkNDMtNjNlOC00NjBmLWEwY2YtZDJhOGJkYWIyYjlhIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.129797, 129.091496)
                 },
                 {//10
                     title: '북구', 
-                    content: '<div style="padding:5px;">북구<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiMzBiN2M1MTctM2FkNy00ZjUzLWIwZmYtMmJlMDY5MTcyNjU0IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">북구<br><p> 초미세먼지 : 9 <br> 미세먼지 : 9 <br> 극초미세먼지 : 8 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiZmQ1NWMxZGMtMzJhMy00YWZkLTk3NzQtMTE1OTdmNjQxY2VkIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.233968, 129.025698)
                 },
                 {//11
                     title: '서구', 
-                    content: '<div style="padding:5px;">서구<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYjhkNDY3ZGYtNDZkZi00ZmE4LWFlM2MtZjA3NGVhNDM3ZmY4IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">서구<br><p> 초미세먼지 : 10 <br> 미세먼지 : 14 <br> 극초미세먼지 : 12 </p><a href="https://app.powerbi.com/view?r=eyJrIjoiYjhkNDY3ZGYtNDZkZi00ZmE4LWFlM2MtZjA3NGVhNDM3ZmY4IiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.089074, 129.020829)
                 }
                 
@@ -124,30 +124,31 @@
             // 마커 이미지를 생성합니다    
             var markerImage = new kakao.maps.MarkerImage(redimg, imageSize); 
             var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
+            
+            
+            
             for (var i = 0; i < markerPosition.length; i ++) {
-                if('<? $x > 2 ?>'){
-                    var marker = new kakao.maps.Marker({
-                        map: map, // 마커를 표시할 지도
-                        title : markerPosition[i].title,
-                        position: markerPosition[i].latlng, // 마커를 표시할 위치
-                        image : markerImage // 마커 이미지 
-                    })  
-                }else if ('<? $x > 5 ?>'){
-                    var marker = new kakao.maps.Marker({
-                        map: map, // 마커를 표시할 지도
-                        title : markerPosition[i].title,
-                        position: markerPosition[i].latlng // 마커를 표시할 위치
-                    });
-                }else{
-                    var marker = new kakao.maps.Marker({
-                        map: map, // 마커를 표시할 지도
-                        title : markerPosition[i].title,
-                        position: markerPosition[i].latlng, // 마커를 표시할 위치
-                        image : bluemarker // 마커 이미지 
-                    })
-                }
-                
-                
+                if('<? $x >= 75 ?>'){
+                var marker = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    title : markerPosition[i].title,
+                    position: markerPosition[i].latlng, // 마커를 표시할 위치
+                    image : markerImage // 마커 이미지 
+                })  
+            }else if ('<? $x >= 50 ?>'){
+                var marker = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    title : markerPosition[i].title,
+                    position: markerPosition[i].latlng // 마커를 표시할 위치
+                });
+            }else{
+                var marker = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    title : markerPosition[i].title,
+                    position: markerPosition[i].latlng, // 마커를 표시할 위치
+                    image : bluemarker // 마커 이미지 
+                })
+            }
                 var infowindow = new kakao.maps.InfoWindow({
                     content : markerPosition[i].content,
                     removable : true // x 표시
