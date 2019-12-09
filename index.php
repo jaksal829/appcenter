@@ -61,7 +61,7 @@
                 },
                 {//1
                     title: '김해공항', 
-                    content: '<div style="padding:5px;">김해공항<br><p> <?php  echo (" 초미세먼지 : ".$x." <br> 미세먼지 : ".$y." <br> 극초미세먼지 : ".$z); ?> </p><a href=""https://app.powerbi.com/view?r=eyJrIjoiMjJkYWJhMjktMzg4ZS00ZTAyLWIyMDktNDZiNTI1ZWIwNzhlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D"" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">김해공항<br><p> 초미세먼지 : 14 <br> 미세먼지 : 13 <br> 극초미세먼지 : 6 </p><a href=""https://app.powerbi.com/view?r=eyJrIjoiMjJkYWJhMjktMzg4ZS00ZTAyLWIyMDktNDZiNTI1ZWIwNzhlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D"" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.173097, 128.946298)
                 },
                 {//2
