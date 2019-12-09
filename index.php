@@ -27,16 +27,9 @@ $daily .= '&' . urlencode('searchCondition') . '=' . urlencode('DAILY'); /*요�
     <td>초미세먼지</td>
   </tr>
   <tr>
-    <td>
-		<?php
-        	$resultnum
-        ?></td>
-    <td><?php
-                        $pagenum
-                    ?></td>
-    <td><?php
-                        $daily
-                    ?></td>
+    <td><p><?php	$resultnum ?></p></td>
+    <td><p><?php  $pagenum ?></p></td>
+    <td><p><?php $daily  ?></p></td>
   </tr>
   </table>
     
