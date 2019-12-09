@@ -128,7 +128,7 @@
                 var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
                 
                 
-                if(<?php $x  ?> >= 1){
+                if( markerPosition[i].$x >= 1){
                     marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
                         title : markerPosition[i].title,
@@ -140,8 +140,7 @@
                     map: map, // 마커를 표시할 지도
                     title : markerPosition[i].title,
                     position: markerPosition[i].latlng // 마커를 표시할 위치
-                    //image : markerImage // 마커 이미지 
-                });
+                    });
                 }
 
                 var infowindow = new kakao.maps.InfoWindow({
