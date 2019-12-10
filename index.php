@@ -85,7 +85,7 @@
             var markerPosition  = [ 
                 {//0
                     title: '신라대학교',
-                    content: '<div style="padding:5px;">신라대학교<br><p> <?php  echo (" 초미세먼지 : 34 <br> 미세먼지 : ".$y0." <br> 극초미세먼지 : ".$z0); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiZGZlZDg0MzItMDg0Mi00ZTc0LTk2YzQtNDY4M2QzMTY3YWFlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
+                    content: '<div style="padding:5px;">신라대학교<br><p> <?php  echo (" 초미세먼지 : ".$x0." <br> 미세먼지 : ".$y0." <br> 극초미세먼지 : ".$z0); ?> </p><a href="https://app.powerbi.com/view?r=eyJrIjoiZGZlZDg0MzItMDg0Mi00ZTc0LTk2YzQtNDY4M2QzMTY3YWFlIiwidCI6IjI2NmU2NDRkLWQzMzAtNGRhNi1iZTdjLTBlZGVkYThlMTk2NCIsImMiOjEwfQ%3D%3D" style="color:blue" target="img">상세정보조회</a></div>', 
                     latlng: new kakao.maps.LatLng(35.169024, 128.995852)
                 },
                 {//1
@@ -155,18 +155,18 @@
             var bluemarker = new kakao.maps.MarkerImage(blueimg, imageSize);
             for (var i = 0; i < markerPosition.length; i ++) {
                 if(i == 0){
-                    if('<?php echo($x0); ?>' >=30){
-                        var marker = new kakao.maps.Marker({
-                            map: map, // 마커를 표시할 지도
-                            title : markerPosition[0].title,
-                            position: markerPosition[0].latlng 
-                        });
-                   }else if ('<?php echo($x0); ?>' >= 25){
+                    if('<?php echo($x0); ?>' >=75){
                         var marker = new kakao.maps.Marker({
                             map: map, // 마커를 표시할 지도
                             title : markerPosition[0].title,
                             position: markerPosition[0].latlng, // 마커를 표시할 위치
-                            image : markerImage // 마커 이미지 // 마커를 표시할 위치
+                            image : markerImage // 마커 이미지 
+                        });
+                   }else if ('<?php echo($x0); ?>' >= 50){
+                        var marker = new kakao.maps.Marker({
+                            map: map, // 마커를 표시할 지도
+                            title : markerPosition[0].title,
+                            position: markerPosition[0].latlng // 마커를 표시할 위치
                         });
                     }else{
                         var marker = new kakao.maps.Marker({
